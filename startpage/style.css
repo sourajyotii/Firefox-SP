@@ -69,6 +69,8 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   align-self: center;
+  max-width: 1050px;
+  justify-content: space-evenly;
   gap: 20px;
   padding: 20px;
 }

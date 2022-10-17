@@ -1,4 +1,3 @@
-@import "nord.css";
 :root {
   --nord0: #2e3440;
   --nord1: #3b4252;;
@@ -88,6 +87,7 @@ h2 {
 }
 
 .logo {
+  display: flex;
   align-self: center;
   padding: 15px;
 }
@@ -115,7 +115,7 @@ input {
 }
 
 button {
-	border-radius: 20px;
+	border-radius: 3px;
 	border: none;
 	background-color: transparent;
 	width: 55px;
@@ -160,6 +160,7 @@ select option {
 
 .search-bar {
   display: flex;
+  flex-direction: row;
   width: 608px;
   border-radius: 3px;
   background: var(--nord1);
@@ -206,4 +207,49 @@ div.bookmarks.per a:hover {
 
 div.bookmarks.art a:hover {
   color: #FF62CE;
+}
+
+@media only screen and (max-width: 700px) {
+  .search-bar {
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 40px 20px 20px 20px;
+  }
+  .logo {
+    display: none;
+  }
+  .clock-greeting {
+    float: none;
+    justify-content: center;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+  }
+  h2 {
+    margin: 0px;
+  }
+  #clock {
+    display: none;
+  }
+  select {
+    height: 50px;
+    width: 95%;
+    margin: 10px 0px 10px 0px;
+    background-color: var(--nord0);
+  }
+  input {
+    height: 50px;
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  #search-button {
+    margin : 5px 0px 0px 0px;
+  }
+  button {
+    width: 13.5%;
+    height: 50px;
+  }
+  select:hover {
+    filter: none;
+  }
 }

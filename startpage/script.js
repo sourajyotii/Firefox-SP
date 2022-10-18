@@ -3,7 +3,7 @@
 function greetings() {
 	let currentDate = new Date();
 	let hour = currentDate.getHours();
-	
+
 	if (hour < 6 && hour >= 0) {
 		document.getElementById("time-greeting").textContent = "It's too late, take some sleep";
 	}
@@ -100,35 +100,54 @@ function webSearch() {
 		window.location.href = (`https://www.google.com/search?q=${query}`);
 }
 
-clock();
-greetings();
+function searchSettings() {
+	const searchButton = document.getElementById("search-button").addEventListener("click", webSearch);
+	const inputBox = document.getElementById("web-search");
+	const selectedOption = document.getElementById("search-options").value;
+	let selector = document.getElementById("search-options");
 
-const searchButton = document.getElementById("search-button").addEventListener("click", webSearch);
+	selector.addEventListener("change", () => {
+		switch (selector.value) {
+			case "brave":
+				inputBox.setAttribute("placeholder", `Search with Brave`);
+				break;
+			case "duckduckgo":
+				inputBox.setAttribute("placeholder", `Search with DuckDuckGo`);
+				break;
+			case "google":
+				inputBox.setAttribute("placeholder", `Search with Google`);
+				break;
+		}
+	});
 
-const inputBox = document.getElementById("web-search");
-const selectedOption = document.getElementById("search-options").value;
-let selector = document.getElementById("search-options");
+	inputBox.addEventListener("keypress", function (event) {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			document.getElementById("search-button").click();
+		}
+	});
+}
 
-selector.addEventListener("change", () =>  {
-	switch(selector.value) {
-		case "brave":
-			inputBox.setAttribute("placeholder", `Search with Brave`);
-			break;
-		case "duckduckgo":
-			inputBox.setAttribute("placeholder", `Search with DuckDuckGo`);
-			break;
-		case "google":
-			inputBox.setAttribute("placeholder", `Search with Google`);
-			break;
-	}
-});
+function weatherBallon(cityID) {
+	var key = '4d8fb5b93d4af21d66a2948710284366';
+	fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key)
+		.then(function (resp) { return resp.json() })
+		.then(function (data) {
+			let celcius = Math.round(parseFloat(data.main.temp) - 273.15);
+			document.getElementById('description').innerHTML = data.weather[0].description;
+			document.getElementById('temp').innerHTML = celcius + '&deg;';
+			document.getElementById('location').innerHTML = data.name;
+		});
+}
 
-inputBox.addEventListener("keypress", function (event) {
-	if (event.key === "Enter") {
-		event.preventDefault();
-		document.getElementById("search-button").click();
-	}
-});
+window.onload = function () {
+	clock();
+	greetings();
+	searchSettings();
+	weatherBallon( 1275004 );
+}
+
+
 
 
 

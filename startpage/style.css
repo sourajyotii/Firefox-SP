@@ -31,12 +31,18 @@ body {
 
 .clock-greeting {
   text-align: right;
-	margin: 10px 50px 0px 0px;
+	margin: 10px 40px 0px 0px;
   float: right;
 	color: var(--nord5);
 }
 
-h2 {
+.weather {
+  font-size: 1.4em;
+  margin: 20px 0px 0px 40px;
+  color: var(--nord5);
+}
+
+h1,h2 {
   margin: 1px;
 }
 
@@ -209,7 +215,7 @@ div.bookmarks.art a:hover {
   color: #FF62CE;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .search-bar {
     flex-wrap: wrap;
     width: 95%;
@@ -223,6 +229,9 @@ div.bookmarks.art a:hover {
     justify-content: center;
     text-align: center;
     margin: 0px 0px 0px 0px;
+  }
+  .weather {
+    display: none;
   }
   h2 {
     margin: 0px;
@@ -250,6 +259,8 @@ div.bookmarks.art a:hover {
     height: 50px;
   }
   select:hover {
+    filter: saturate(100%) brightness(100%) !important;
     filter: none;
+    opacity: 50%;
   }
 }

@@ -7,22 +7,22 @@ function greetings() {
 	if (hour < 6 && hour >= 0) {
 		document.getElementById("time-greeting").textContent = "It's too late, take some sleep";
 	}
-	if (hour < 9 && hour >= 6) {
+	else if (hour < 9 && hour >= 6) {
 		document.getElementById("time-greeting").textContent = "Good morning :)";
 	}
-	if (hour < 12 && hour >= 9) {
+	else if (hour < 12 && hour >= 9) {
 		document.getElementById("time-greeting").textContent = "Have a good day";
 	}
-	if (hour < 15 && hour >= 12) {
+	else if (hour < 15 && hour >= 12) {
 		document.getElementById("time-greeting").textContent = "Hi there!";
 	}
-	if (hour < 18 && hour >= 15) {
+	else if (hour < 18 && hour >= 15) {
 		document.getElementById("time-greeting").textContent = "Good afternoon";
 	}
-	if (hour < 20 && hour >= 18) {
+	else if (hour < 20 && hour >= 18) {
 		document.getElementById("time-greeting").textContent = "Good evening :)";
 	}
-	if (hour < 0 && hour >= 20) {
+	else {
 		document.getElementById("time-greeting").textContent = "I hope you've had a fantastic day";
 	}
 }

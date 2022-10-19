@@ -44,7 +44,7 @@ body {
 }
 
 h1,h2 {
-  margin: 1px;
+  margin: 0px;
 }
 
 .container {
@@ -222,7 +222,7 @@ div.bookmarks.art a:hover {
     width: 95%;
     margin: 40px 20px 20px 20px;
   }
-  .logo {
+  .logo, .weather, #clock {
     display: none;
   }
   .clock-greeting {
@@ -230,15 +230,6 @@ div.bookmarks.art a:hover {
     justify-content: center;
     text-align: center;
     margin: 0px 0px 0px 0px;
-  }
-  .weather {
-    display: none;
-  }
-  h2 {
-    margin: 0px;
-  }
-  #clock {
-    display: none;
   }
   select {
     height: 50px;
@@ -258,10 +249,5 @@ div.bookmarks.art a:hover {
   button {
     width: 13.5%;
     height: 50px;
-  }
-  select:hover {
-    filter: saturate(100%) brightness(100%) !important;
-    filter: none;
-    opacity: 50%;
   }
 }

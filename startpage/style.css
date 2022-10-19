@@ -31,14 +31,15 @@ body {
 
 .clock-greeting {
   text-align: right;
-	margin: 10px 40px 0px 0px;
+	margin: 30px 40px 0px 0px;
   float: right;
 	color: var(--nord5);
 }
 
 .weather {
+  float: left;
   font-size: 1.4em;
-  margin: 20px 0px 0px 40px;
+  margin: 30px 0px 0px 40px;
   color: var(--nord5);
 }
 

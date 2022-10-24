@@ -250,4 +250,8 @@ div.bookmarks.art a:hover {
     width: 13.5%;
     height: 50px;
   }
+  select:hover {
+    filter: none !important;
+    opacity: 50%;
+  }
 }

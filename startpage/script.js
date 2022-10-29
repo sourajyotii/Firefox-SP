@@ -110,12 +110,15 @@ function searchSettings() {
 		switch (selector.value) {
 			case "brave":
 				inputBox.setAttribute("placeholder", `Search with Brave`);
+				inputBox.focus();
 				break;
 			case "duckduckgo":
 				inputBox.setAttribute("placeholder", `Search with DuckDuckGo`);
+				inputBox.focus();
 				break;
 			case "google":
 				inputBox.setAttribute("placeholder", `Search with Google`);
+				inputBox.focus();
 				break;
 		}
 	});

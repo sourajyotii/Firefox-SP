@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1", user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1" , user-scalable=no">
   <title>Home</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -26,16 +26,16 @@
     <div class="head">
       <div class="logo"><img src="icons/fox.svg" /></div>
       <div class="search-bar">
-
-        <select name="search" id="search-options" style="cursor:pointer">
-          <option value="brave">Brave</option>
-          <option value="duckduckgo">DuckDuckGo</option>
-          <option value="google">Google</option>
-        </select>
-
-        <input type="text" id="web-search" placeholder="Search with Brave">
-        <button id="search-button"><img src="icons/search.svg" style="cursor:pointer" /></button>
-
+          <select name="search" id="search-options" style="cursor:pointer">
+            <option value="brave">Brave</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+            <option value="google">Google</option>
+          </select>
+          <form id="searchinput" action="" autocomplete="off" oninput="suggest()">
+            <input type="text" id="web-search" placeholder="Search with Brave">
+          </form>
+          <button id="search-button"><img src="icons/search.svg" style="cursor:pointer" /></button>
+        <div id="suggestions"></div>
       </div>
     </div>
 
@@ -98,6 +98,7 @@
     </div>
   </div>
   <script src="script.js"></script>
+  <script src="suggestions.js "></script>
 </body>
 
 </html>

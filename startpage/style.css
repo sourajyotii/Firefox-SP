@@ -1,15 +1,16 @@
 :root {
   --nord0: #2e3440;
-  --nord1: #3b4252;;
+  --nord1: #3b4252;
+  ;
   --nord2: #282a36;
   --nord4: #d8dee9;
   --nord5: #e5e9f0;
-  
+
 }
 
-html{
+html {
   display: flex;
-  flex-flow: row nowrap;  
+  flex-flow: row nowrap;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -18,7 +19,7 @@ html{
   margin: 0;
   padding: 0;
   background: var(--nord0);
-    }
+}
 
 body {
   background: var(--nord0);
@@ -31,9 +32,9 @@ body {
 
 .clock-greeting {
   text-align: right;
-	margin: 30px 40px 0px 0px;
+  margin: 30px 40px 0px 0px;
   float: right;
-	color: var(--nord5);
+  color: var(--nord5);
 }
 
 .weather {
@@ -43,7 +44,8 @@ body {
   color: var(--nord5);
 }
 
-h1,h2 {
+h1,
+h2 {
   margin: 0px;
 }
 
@@ -67,7 +69,7 @@ h1,h2 {
 }
 
 .category:hover {
-	transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .bookmark {
@@ -107,13 +109,14 @@ h1,h2 {
 }
 
 input {
-	border: none;
+  border: none;
   outline: none;
   background: none;
   padding-right: 15px;
   padding-left: 15px;
   width: 408px;
-  color: linear-gradient(var(--nord4), var(--nord4)), linear-gradient(var(--nord4), var(--nord4));;
+  color: linear-gradient(var(--nord4), var(--nord4)), linear-gradient(var(--nord4), var(--nord4));
+  ;
   font-size: 22px;
   border-radius: 0px;
   border: none;
@@ -122,21 +125,21 @@ input {
 }
 
 button {
-	border-radius: 3px;
-	border: none;
-	background-color: transparent;
-	width: 55px;
-	transition: 300ms;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  width: 55px;
+  transition: 300ms;
   opacity: 60%;
 }
 
 button:hover {
-	filter: saturate(150%) brightness(120%) !important;
+  filter: saturate(150%) brightness(120%) !important;
   opacity: 100%;
 }
 
 button:active {
-	transform: scale(.95);
+  transform: scale(.95);
 }
 
 #search-button {
@@ -145,19 +148,20 @@ button:active {
 }
 
 select {
-	padding: 5px;
-	border-radius: 3px;
-	width: 100px;
-	border: none;
-	background-color: transparent;
-	color: var(--nord5);;
+  padding: 5px;
+  border-radius: 3px;
+  width: 100px;
+  border: none;
+  background-color: transparent;
+  color: var(--nord5);
+  ;
   text-align: center;
   margin-right: 5px;
   opacity: 50%;
 }
 
 select:hover {
-	filter: saturate(150%) brightness(120%) !important;
+  filter: saturate(150%) brightness(120%) !important;
   opacity: 100%;
 }
 
@@ -171,10 +175,38 @@ select option {
   width: 608px;
   border-radius: 3px;
   background: var(--nord1);
-	margin: 40px 20px 40px 20px;
+  margin: 40px 20px 40px 20px;
   box-shadow: 5px 5px 3px 0px #1c1f26;
   align-self: center;
-	justify-content: center;
+  justify-content: center;
+}
+
+#suggestions {
+  position: absolute;
+  display: none;
+  width: 608px;
+  text-align: left;
+  margin-top: 70px;
+  background: var(--nord1);
+  border-radius: 3px;
+  box-shadow: 5px 5px 3px 0px #1c1f26;
+}
+
+#suggestions hr {
+  margin: 0;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+#suggestions p {
+  padding-left: 20px;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px 10px 10px 10px;
+}
+
+#suggestions p:hover {
+  background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
 li {
@@ -222,34 +254,48 @@ div.bookmarks.art a:hover {
     width: 95%;
     margin: 40px 20px 20px 20px;
   }
-  .logo, .weather, #clock {
+
+  #suggestions {
+    width : 95%;
+    margin-top: 130px;
+  }
+
+  .logo,
+  .weather,
+  #clock {
     display: none;
   }
+
   .clock-greeting {
     float: none;
     justify-content: center;
     text-align: center;
     margin: 0px 0px 0px 0px;
   }
+
   select {
     height: 50px;
     width: 95%;
     margin: 10px 0px 10px 0px;
     background-color: var(--nord0);
   }
+
   input {
     height: 50px;
     width: 80%;
     padding: 5px;
     margin-bottom: 5px;
   }
+
   #search-button {
-    margin : 5px 0px 0px 0px;
+    margin: 5px 0px 0px 0px;
   }
+
   button {
     width: 13.5%;
     height: 50px;
   }
+
   select:hover {
     filter: none !important;
     opacity: 50%;

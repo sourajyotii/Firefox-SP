@@ -21,20 +21,21 @@
       <h1 id="temp"></h1>
       <div id="location"></div>
     </div>
+    <div class="weathericon"><img src="" width="104px" height="104px" id="wicon"></div>
   </header>
   <div class="container">
     <div class="head">
       <div class="logo"><img src="icons/fox.svg" /></div>
       <div class="search-bar">
-          <select name="search" id="search-options" style="cursor:pointer">
-            <option value="brave">Brave</option>
-            <option value="duckduckgo">DuckDuckGo</option>
-            <option value="google">Google</option>
-          </select>
-          <form id="searchinput" action="" autocomplete="off" oninput="suggest()">
-            <input type="text" id="web-search" placeholder="Search with Brave">
-          </form>
-          <button id="search-button"><img src="icons/search.svg" style="cursor:pointer" /></button>
+        <select name="search" id="search-options" style="cursor:pointer">
+          <option value="brave">Brave</option>
+          <option value="duckduckgo">DuckDuckGo</option>
+          <option value="google">Google</option>
+        </select>
+        <form id="searchinput" action="" autocomplete="off" oninput="suggest()">
+          <input type="text" id="web-search" placeholder="Search with Brave">
+        </form>
+        <button id="search-button"><img src="icons/search.svg" style="cursor:pointer" /></button>
         <div id="suggestions"></div>
       </div>
     </div>

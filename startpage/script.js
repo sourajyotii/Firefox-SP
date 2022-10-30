@@ -138,9 +138,15 @@ function weatherBallon(cityID) {
 		.then(function (data) {
 			let celcius = Math.round(parseFloat(data.main.temp) - 273.15);
 			document.getElementById('description').innerHTML = data.weather[0].description;
+			document.getElementById("wicon").src = getIcon(data.weather[0].icon);
 			document.getElementById('temp').innerHTML = celcius + '&deg;';
 			document.getElementById('location').innerHTML = data.name;
 		});
+}
+
+function getIcon(icon) {
+    const icon_url = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+    return icon_url;
 }
 
 window.onload = function () {

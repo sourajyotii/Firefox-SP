@@ -88,42 +88,43 @@ function clock() {
 	}, 1000);
 }
 
-function webSearch() {
-	const selectedOption = document.getElementById("search-options").value;
-	const query = document.getElementById("web-search").value;
+const Brave = {
+	name: "Brave",
+	url: "https://search.brave.com/search?q=",
+	icon: "https://cdn.icon-icons.com/icons2/2699/PNG/512/brave_logo_icon_167780.png",
+};
 
-	if (selectedOption === "brave")
-		window.location.href = (`https://search.brave.com/search?q=${query}`);
-	else if (selectedOption === "duckduckgo")
-		window.location.href = (`https://www.duckduckgo.com/${query}`);
-	else if (selectedOption === "google")
-		window.location.href = (`https://www.google.com/search?q=${query}`);
+const DuckDuckGo = {
+	name: "DuckDuckGo",
+	url: "https://www.duckduckgo.com/",
+	icon: "https://cdn3.iconfinder.com/data/icons/social-media-special/256/duckduckgo-512.png",
+};
+
+const Google = {
+	name: "Google",
+	url: "https://www.google.com/search?q=",
+	icon: "https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_google-512.png",
+};
+
+let engUrl = "";
+let engName = "";
+
+function changeSearchEngine(selectedOption) {
+	engUrl = eval(selectedOption).url;
+	engName = eval(selectedOption).name;
+	const inputBox = document.getElementById("web-search");
+	inputBox.setAttribute("placeholder", `Search with ${engName}`);
+	document.getElementById("selectIcon").src = eval(selectedOption).icon;
+}
+
+function webSearch() {
+	const query = document.getElementById("web-search").value;
+	window.location.href = (`${engUrl}${query}`);
 }
 
 function searchSettings() {
-	const searchButton = document.getElementById("search-button").addEventListener("click", webSearch);
-	const inputBox = document.getElementById("web-search");
-	const selectedOption = document.getElementById("search-options").value;
-	let selector = document.getElementById("search-options");
-
-	selector.addEventListener("change", () => {
-		switch (selector.value) {
-			case "brave":
-				inputBox.setAttribute("placeholder", `Search with Brave`);
-				inputBox.focus();
-				break;
-			case "duckduckgo":
-				inputBox.setAttribute("placeholder", `Search with DuckDuckGo`);
-				inputBox.focus();
-				break;
-			case "google":
-				inputBox.setAttribute("placeholder", `Search with Google`);
-				inputBox.focus();
-				break;
-		}
-	});
-
-	inputBox.addEventListener("keypress", function (event) {
+	document.getElementById("search-button").addEventListener("click", webSearch);
+	document.getElementById("web-search").addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
 			document.getElementById("search-button").click();
@@ -145,15 +146,37 @@ function weatherBallon(cityID) {
 }
 
 function getIcon(icon) {
-    const icon_url = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
-    return icon_url;
+	const icon_url = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+	return icon_url;
 }
+
+
+
+function showDropdown() {
+	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+	if (!event.target.matches('#selectIcon')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
+
 
 window.onload = function () {
 	clock();
 	greetings();
 	searchSettings();
-	weatherBallon( 1275004 );
+	changeSearchEngine("Brave")
+	weatherBallon(1275004);
 }
 
 

@@ -294,7 +294,6 @@ div.bookmarks.art a:hover {
 
   #suggestions {
     width : 95%;
-    margin-top: 130px;
   }
 
   .logo,
@@ -315,12 +314,8 @@ div.bookmarks.art a:hover {
   }
 
   #search-button {
-    margin: 5px 0px 0px 0px;
+    display: none;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  #web-search {
-    width: auto;
-  }
 }

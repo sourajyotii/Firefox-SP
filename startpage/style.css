@@ -113,7 +113,8 @@ h2 {
   margin: 15px;
 }
 
-input {
+#web-search {
+  display: flex;
   border: none;
   outline: none;
   background: none;
@@ -162,49 +163,53 @@ input {
   opacity: 50%;
 }
 
-/* Dropdown button on hover & focus */
 #selectIcon:hover,
 #selectIcon:focus {
   opacity: 120%;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
   position: absolute;
   background: none;
   width: 2.5em;
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .option {
   margin-top: 16px;
+  margin-left: 8px;
   display: block;
   opacity: 50%;
 }
 
-/* Change color of dropdown links on hover */
 .option:hover {
   cursor: pointer;
   opacity: 120%;
 }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
-  display: block;
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
 }
 
 img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+#searchinput {
+  display: flex;
 }
 
 .search-bar {
@@ -309,13 +314,14 @@ div.bookmarks.art a:hover {
     margin: 0px 0px 0px 0px;
   }
 
-  #search-input {
-    width: 60%;
+  #web-search {
+    width: 100%;
   }
 
-  #search-button {
-    display: none;
+  #searchinput {
+    width: 80%;
   }
-}
 
 }
+
+

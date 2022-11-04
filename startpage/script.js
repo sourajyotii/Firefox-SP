@@ -150,13 +150,10 @@ function getIcon(icon) {
 	return icon_url;
 }
 
-
-
 function showDropdown() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
 	if (!event.target.matches('#selectIcon')) {
 		var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -169,7 +166,6 @@ window.onclick = function (event) {
 		}
 	}
 }
-
 
 window.onload = function () {
 	clock();

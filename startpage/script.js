@@ -1,5 +1,6 @@
 "use strict"
 
+/* Time and Greetings */
 function greetings() {
 	let currentDate = new Date();
 	let hour = currentDate.getHours();
@@ -88,6 +89,8 @@ function clock() {
 	}, 1000);
 }
 
+
+/* Search */
 const Brave = {
 	name: "Brave",
 	url: "https://search.brave.com/search?q=",
@@ -106,8 +109,31 @@ const Google = {
 	icon: "https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_google-512.png",
 };
 
+const YouTube = {
+	name: "YouTube",
+	url: "https://www.youtube.com/results?search_query=",
+	icon: "https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png",
+};
+
 let engUrl = "";
 let engName = "";
+
+function showDropdown() {
+	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+	if (!event.target.matches('#selectIcon')) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
+}
 
 function changeSearchEngine(selectedOption) {
 	engUrl = eval(selectedOption).url;
@@ -132,6 +158,8 @@ function searchSettings() {
 	});
 }
 
+
+/* Weather */
 function weatherBallon(cityID) {
 	var key = '4d8fb5b93d4af21d66a2948710284366';
 	fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key)
@@ -150,23 +178,8 @@ function getIcon(icon) {
 	return icon_url;
 }
 
-function showDropdown() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
 
-window.onclick = function (event) {
-	if (!event.target.matches('#selectIcon')) {
-		var dropdowns = document.getElementsByClassName("dropdown-content");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains('show')) {
-				openDropdown.classList.remove('show');
-			}
-		}
-	}
-}
-
+/* Main */
 window.onload = function () {
 	clock();
 	greetings();

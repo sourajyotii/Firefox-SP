@@ -5,13 +5,13 @@ Custom startpage for firefox written in html, css, js.
 
 #Features
 ## Kinda Responsive
-![Responsive](./Resources/Responsive.mp4)
+![Responsive](./Resources/Responsive.gif)
 
 ## Search Engines
-![Engines](./Resources/Search Engines.mp4)
+![Engines](./Resources/Search Engines.gif)
 
 ## Search Suggessions
-![Suggestions](./Resources/Suggessions.mp4)
+![Suggestions](./Resources/Suggessions.gif)
 
 ## Weather
 ![Weather](./Resources/Weather.png)

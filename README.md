@@ -8,7 +8,7 @@ Custom startpage for firefox written in html, css, js.
 ![Responsive](./Resources/Responsive.mp4)
 
 ## Search Engines
-![SE](./Resources/Search Engines.mp4)
+![Engines](./Resources/Search Engines.mp4)
 
 ## Search Suggessions
 ![Suggestions](./Resources/Suggessions.mp4)

@@ -3,7 +3,7 @@ Custom startpage for firefox written in html, css, js.
 
 ![Preview](./Resources/Homepage.png)
 
-##Features
+## Features
 ### Kinda Responsive
 ![Responsive](./Resources/Responsive.gif)
 
